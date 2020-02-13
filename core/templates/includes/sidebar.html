@@ -1,0 +1,88 @@
+
+<div class="sidebar" data-color="#140947">
+  <div class="logo">
+    <a href="https://github.com/app-generator/django-dashboard-nowui" class="simple-text logo">
+      Ngoina Secondary School.
+    </a>
+  </div>
+  <div class="sidebar-wrapper" id="sidebar-wrapper">
+
+    <ul class="nav">
+
+      {% if user.is_authenticated %}
+
+      <li class=" ">
+        <a href="/">
+          <i class="now-ui-icons design_app"></i>
+          <p>Dashboard</p>
+        </a>
+      </li>
+      <li>
+        <a href="/class_list.html">
+          <i><img src="https://img.icons8.com/dotty/80/000000/student-registration.png"></i>
+          <p>Student</p>
+        </a>
+      </li>
+      <li>
+      <li>
+        <a href="class_list.html">
+          <ul>
+            <li>
+              <p>Class List</p>
+            </li>
+          </ul>
+        </a>
+      </li>
+      <li>
+        <a href="register.html">
+          <ul>
+            <li>
+              <p>Add New Student</p>
+            </li>
+          </ul>
+        </a>
+      </li>
+      <li>
+        <a href="/notifications.html">
+          <i class="now-ui-icons ui-1_bell-53"></i>
+          <p>Marks</p>
+        </a>
+      </li>
+      <li>
+        <a href="/contest.html">
+          <i><img src="https://img.icons8.com/wired/64/000000/report-card.png"></i>
+          <p>Reports</p>
+        </a>
+      </li>
+      <li>
+        <a href="/user.html">
+          <i class="now-ui-icons users_single-02"></i>
+          <p>User Profile</p>
+        </a>
+      </li>
+      <li>
+        <a href="/teachers_list.html">
+          <i class="now-ui-icons text_caps-small"></i>
+          <p>Teachers</p>
+        </a>
+      </li>
+      <li>
+        <a href="/school_settings.html">
+          <i><img src="https://img.icons8.com/ios-glyphs/64/000000/services.png"></i>
+          <p>Settings</p>
+        </a>
+      </li>
+
+      <li>
+        <a href="{% url 'logout' %}" >
+          <i class="now-ui-icons media-1_button-power"></i>
+          <p>Logout</p>
+        </a>
+      </li>
+
+      {% endif %}
+
+    </ul>
+  </div>
+</div>
+

@@ -1,0 +1,167 @@
+
+{% extends 'layouts/base.html' %}
+
+{% block title %} New Student {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="panel-header panel-header-sm">
+</div>
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Add New Student</h5>
+        </div>
+        <div class="card-body">
+          <form role="form" method="POST" action="{% url 'registration' %}" class="post-form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>Adm Number</label>
+                  <input name="admno" type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  {{ form.admno }}
+                </div>
+              </div>
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text"  name="first_name" class="form-control">
+                </div>
+                   <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  {{ form.first_name }}
+              </div>
+            </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" name="last_name" class="form-control">
+                </div>
+                   <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  {{ form.last_name }}
+              </div>
+            </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Address</label>
+                  <input type="text" name="address" class="form-control" placeholder="Home Address">
+                </div>
+                   <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  {{ form.address }}
+              </div>
+            </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>Town</label>
+                  <input type="text" name="town" class="form-control" placeholder="City">
+                </div>
+                   <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  {{ form.town }}
+              </div>
+            </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label>County</label>
+                  <input type="text" name="county" class="form-control" placeholder="County">
+                </div>
+                   <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  {{ form.county }}
+              </div>
+            </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label>Postal Code</label>
+                  <input type="number" name="postalcode" class="form-control" placeholder="ZIP Code">
+                </div>
+                   <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  {{ form.postalcode }}
+              </div>
+            </div>
+              </div>
+            </div>
+            <div class="card-header">
+              <h5 class="title">Next of kin</h5>
+            </div>
+            <div class="row">
+
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" name="fname" class="form-control">
+                </div>
+                   <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  {{ form.fname }}
+              </div>
+            </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" name="lname" class="form-control">
+                </div>
+                   <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  {{ form.lname }}
+              </div>
+            </div>
+              </div>
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>phone no:</label>
+                  <input type="text" name="phone" class="form-control">
+                </div>
+                   <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  {{ form.phone }}
+              </div>
+            </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8 ml-auto mr-auto">
+                <div class="row">
+                  <div class="col-md-4">
+                    <button type="submit" id="submit" class="save btn btn-success btn-block">Save</button>
+                  </div>
+                  <div class="col-md-4">
+                    <button type="reset" class="btn btn-primary btn-block" name="cancel">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}
