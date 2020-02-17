@@ -34,3 +34,11 @@ class Post(models.Model):
 
     class Meta:
         db_table = 'Post'
+
+
+class TeacherRegister(models.Model):
+    firstname = models.CharField(default='name', max_length=50)
+    lastname = models.CharField(default='name', max_length=50)
+
+    class Meta:
+        db_table = 'TeacherRegister'

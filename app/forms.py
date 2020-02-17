@@ -1,17 +1,9 @@
 from django import forms
-from django.contrib.auth.models import User
 
 
 class Register(forms.Form):
-    admno = forms.IntegerField()
-    first_name = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                "placeholder": "First Name",
-                "class": "form-control"
-            }
-        )
-    )
+    admno = forms.IntegerField(required=True)
+    first_name = forms.CharField()
     last_name = forms.CharField()
     address = forms.IntegerField()
     town = forms.CharField()
@@ -22,8 +14,4 @@ class Register(forms.Form):
     lname = forms.CharField()
     phone = forms.IntegerField()
 
-    class Meta:
-        model = User
-        fields = ('admno', 'first_name', 'last_name',
-                  'address', 'town', 'county', 'postal_code', 'fname',
-                  'lname', 'phone')
+

@@ -1,20 +1,18 @@
 # -*- encoding: utf-8 -*-
-"""
-License: Commercial
-Copyright (c) 2019 - present AppSeed.us
-"""
+
 
 import os
 from decouple import config
 from unipath import Path
 import django_heroku
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_DIR = Path(__file__).parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_1122')
+SECRET_KEY = 's_8un-)mws@v7@nj2#l28&81vrlfd!9b%+9=^m^1cnkw%7n0kf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False)
@@ -30,9 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Enable the inner app
-    'app'
-
+    'django.contrib.sites',
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -72,23 +69,33 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'NSC',
-        'USER': 'postgres',
-        'PASSWORD': 'aron',
-        'HOST': '127.0.0.1',
-        'PORT': '5433',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'NSC',
+#         'USER': 'postgres',
+#         'PASSWORD': 'aron',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5433',
+#     }
+# }
+# DATABASES = {
+#     'default': {
+#         'NAME': 'user_data',
+#         'ENGINE': 'mysql.connector.django',
+#         'USER': 'mysql_user',
+#         'PASSWORD': 'password',
+#         'OPTIONS': {
+#           'autocommit': True,
+#         },
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 

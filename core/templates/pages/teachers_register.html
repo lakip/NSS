@@ -1,0 +1,171 @@
+
+{% extends 'layouts/base.html' %}
+
+{% block title %} New Student {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="panel-header panel-header-sm">
+</div>
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Add Teacher</h5>
+        </div>
+        <div class="card-body">
+          <form role="form" method="POST" action="/class_list.html" class="post-form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>TSC Number</label>
+                  <input name="tsc" type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text"  name="first_name" class="form-control">
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" name="last_name" class="form-control">
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Address</label>
+                  <input type="text" name="address" class="form-control" placeholder="Home Address">
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>Town</label>
+                  <input type="text" name="town" class="form-control" placeholder="City">
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label>County</label>
+                  <input type="text" name="county" class="form-control" placeholder="County">
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label>Postal Code</label>
+                  <input type="number" name="postalcode" class="form-control" placeholder="ZIP Code">
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-header">
+              <h5 class="title">Teaching Subjects</h5>
+            </div>
+            <div class="row">
+
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>Subject one</label>
+                  <select name="subject1" id="subject1" class="form-control">
+                    <option value="English">English</option>
+                    <option value="Kiswahili">Kiswahili</option>
+                    <option value="Maths">Maths</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Geography">Geography</option>
+                    <option value="History">History</option>
+                    <option value="CRE">CRE</option>
+                    <option value="Business">Business</option>
+                    <option value="Agriculture">Agriculture</option>
+                    <option value="comp">Computer & App</option>
+                  </select>
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>Subject one</label>
+                  <select name="subject1" id="subject2" class="form-control">
+                    <option value="English">English</option>
+                    <option value="Kiswahili">Kiswahili</option>
+                    <option value="Maths">Maths</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Geography">Geography</option>
+                    <option value="History">History</option>
+                    <option value="CRE">CRE</option>
+                    <option value="Business">Business</option>
+                    <option value="Agriculture">Agriculture</option>
+                    <option value="comp">Computer & App</option>
+                  </select>
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8 ml-auto mr-auto">
+                <div class="row">
+                  <div class="col-md-4">
+                    <button type="submit" id="submit" class="save btn btn-success btn-block">Save</button>
+                  </div>
+                  <div class="col-md-4">
+                    <button type="reset" class="btn btn-primary btn-block" name="cancel">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}

@@ -31,10 +31,13 @@
                       </th>
                     </thead>
                     <tbody>
+                    {% for StudentRegister in c_list %}
                       <tr>
-                        <td>
-                        </td>
+                        <td>{{ StudentRegister.admno}}</td>
+                        <td>{{ StudentRegister.first_name }}</td>
+                        <td>{{ StudentRegister.last_name }}</td>
                       </tr>
+                    {% endfor %}
                     </tbody>
                   </table>
                 </div>

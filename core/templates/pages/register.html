@@ -17,40 +17,37 @@
           <h5 class="title">Add New Student</h5>
         </div>
         <div class="card-body">
-          <form role="form" method="POST" action="{% url 'registration' %}" class="post-form" enctype="multipart/form-data">
+          <form role="form" method="POST" action=" " class="post-form" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form.as_p }}
+
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>Adm Number</label>
-                  <input name="admno" type="text" class="form-control">
+                  <input name="admno"  type="text" class="form-control">{{ admno}}
                 </div>
               </div>
               <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  {{ form.admno }}
                 </div>
               </div>
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="text"  name="first_name" class="form-control">
+                  <input type="text"  name="first_name" class="form-control">{{ first_name}}
                 </div>
                    <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  {{ form.first_name }}
               </div>
             </div>
               </div>
               <div class="col-md-6 pl-1">
                 <div class="form-group">
                   <label>Last Name</label>
-                  <input type="text" name="last_name" class="form-control">
+                  <input type="text" name="last_name" class="form-control">{{ last_name}}
                 </div>
                    <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  {{ form.last_name }}
               </div>
             </div>
               </div>
@@ -63,7 +60,6 @@
                 </div>
                    <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  {{ form.address }}
               </div>
             </div>
               </div>
@@ -76,7 +72,6 @@
                 </div>
                    <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  {{ form.town }}
               </div>
             </div>
               </div>
@@ -87,7 +82,6 @@
                 </div>
                    <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  {{ form.county }}
               </div>
             </div>
               </div>
@@ -98,7 +92,6 @@
                 </div>
                    <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  {{ form.postalcode }}
               </div>
             </div>
               </div>
@@ -115,7 +108,6 @@
                 </div>
                    <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  {{ form.fname }}
               </div>
             </div>
               </div>
@@ -126,7 +118,6 @@
                 </div>
                    <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  {{ form.lname }}
               </div>
             </div>
               </div>
@@ -137,7 +128,6 @@
                 </div>
                    <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  {{ form.phone }}
               </div>
             </div>
               </div>
@@ -146,7 +136,7 @@
               <div class="col-lg-8 ml-auto mr-auto">
                 <div class="row">
                   <div class="col-md-4">
-                    <button type="submit" id="submit" class="save btn btn-success btn-block">Save</button>
+                    <button type="submit" name="submit" class="save btn btn-success btn-block" value="Save">Save</button>
                   </div>
                   <div class="col-md-4">
                     <button type="reset" class="btn btn-primary btn-block" name="cancel">Cancel</button>
@@ -154,6 +144,7 @@
                 </div>
               </div>
             </div>
+            {{ form.as_p }}
           </form>
         </div>
       </div>
@@ -163,5 +154,4 @@
 
 {% endblock content %}
 
-<!-- Specific JS goes HERE -->
 {% block javascripts %}{% endblock javascripts %}
