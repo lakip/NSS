@@ -1,0 +1,204 @@
+
+{% extends 'layouts/base.html' %}
+
+{% block title %} New Student {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="panel-header panel-header-sm">
+</div>
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="title">Add New Student</h5>
+
+              </div>
+              <div class="card-body">
+                </div>
+                <div class="card-body">
+                    <form role="form" method="POST" action=" ">
+
+                        {% csrf_token %}
+
+                        <div class="row">
+
+                            <div class="col-md-1 pr-1"></div>
+
+                            <div class="col-md-1 pr-1">
+                                <div class="form-group">
+                                    <label>Admission Number</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.admno }}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-1 pr-1"></div>
+
+                            <div class="col-md-1 pr-1">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.first_name }}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <span class="text-error">{{ form.first_name.errors }}</span>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-1 pr-1"></div>
+
+                            <div class="col-md-1 pr-1">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.last_name }}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <span class="text-error">{{ form.second_name.errors }}</span>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-1 pr-1"></div>
+
+                            <div class="col-md-1 pr-1">
+                                <div class="form-group">
+                                    <label>Address</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.address }}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1 pr-1"></div>
+                            <div class="col-md-1 pr-1">
+                                <div class="form-group">
+                                    <label>Town</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.town }}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1 pr-1"></div>
+                            <div class="col-md-1 pr-1">
+                                <div class="form-group">
+                                    <label>County</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.county }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1 pr-1"></div>
+                            <div class="col-md-1 pr-1">
+                                <div class="form-group">
+                                    <label>Postal Code</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.postal_code }}
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="title">Next of Kin</h4>
+                        <div class="row">
+                            <div class="col-md-1 pr-1"></div>
+                            <div class="col-md-1 pr-1">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.fname }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1 pr-1"></div>
+                            <div class="col-md-1 pr-1">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.lname }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1 pr-1"></div>
+                            <div class="col-md-1 pr-1">
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.phone }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 pr-1"></div>
+
+                            <div class="col-md-2 pr-1">
+                                <button type="submit" class="btn btn-fill btn-sucess">Register</button>
+
+                                <button type="submit" class="btn btn-fill btn-primary">Cancel</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block javascripts %}{% endblock javascripts %}
