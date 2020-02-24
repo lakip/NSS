@@ -30,15 +30,15 @@
                       </th>
                     </thead>
                     <tbody>
+                    {% for teacher in teacher_list %}
                       <tr>
-                        <td>aron</td>
-                        <td>317701</td>
-                        <span content="1" >
-                          <td>eng</td>
-                          <td>kisw</td>
-
-                        </span>
+                        <td>{{ teacher.tsc_no }}</td>
+                        <td>{{ teacher.first_name }} {{ teacher.last_name }}</td>
+                        <td>{{ teacher.teaching_subjects }}</td>
+                        <td>{{ teacher.teaching_subjects2 }}</td>
                       </tr>
+                    {% endfor %}
+
                     </tbody>
                   </table>
                 </div>

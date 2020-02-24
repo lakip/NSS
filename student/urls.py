@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import register_student
+from . import views
 
 urlpatterns = [
-    path('student/', register_student, name='student')
+    # path('student/', views.register_student, name='student'),
+    path('student/', views.studentform_view, name='student'),
+    path('classlist/', views.class_list, name='classlist')
 
 ]

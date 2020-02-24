@@ -4,33 +4,40 @@
 {% block title %} New Student {% endblock title %}
 
 {% block stylesheets %}{% endblock stylesheets %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
 <div class="panel-header panel-header-sm">
 </div>
 <div class="content">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
                     <h5 class="title">Add New Student</h5>
 
-              </div>
-              <div class="card-body">
                 </div>
                 <div class="card-body">
-                    <form role="form" method="POST" action=" ">
+                </div>
+                <div class="card-body">
+                    <form role="form" method="post" action="">
 
                         {% csrf_token %}
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in message %}
+                                <li {% if message.tags%} class="{{ message.tags }}" {% endif %}> {{ message }}></li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
 
                         <div class="row">
 
                             <div class="col-md-1 pr-1"></div>
 
-                            <div class="col-md-1 pr-1">
+                            <div class="col-md-2 pr-1">
                                 <div class="form-group">
-                                    <label>Admission Number</label>
+                                    <label>Admission</label>
                                 </div>
                             </div>
 
@@ -41,13 +48,30 @@
                             </div>
 
                         </div>
+
                         <div class="row">
 
                             <div class="col-md-1 pr-1"></div>
 
-                            <div class="col-md-1 pr-1">
+                            <div class="col-md-2 pr-1">
                                 <div class="form-group">
-                                    <label>First Name</label>
+                                    <label>Form</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.formclass }}
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-1 pr-1"></div>
+                            <div class="col-md-2 pr-1">
+                                <div class="form-group">
+                                    <label>Student Name</label>
                                 </div>
                             </div>
 
@@ -66,10 +90,7 @@
 
                             <div class="col-md-1 pr-1"></div>
 
-                            <div class="col-md-1 pr-1">
-                                <div class="form-group">
-                                    <label>Last Name</label>
-                                </div>
+                            <div class="col-md-2 pr-1">
                             </div>
 
                             <div class="col-md-6 pr-1">
@@ -80,14 +101,14 @@
 
                         </div>
                         <div class="row">
-                            <span class="text-error">{{ form.second_name.errors }}</span>
+                            <span class="text-error">{{ form.last_name.errors }}</span>
                         </div>
 
                         <div class="row">
 
                             <div class="col-md-1 pr-1"></div>
 
-                            <div class="col-md-1 pr-1">
+                            <div class="col-md-2 pr-1">
                                 <div class="form-group">
                                     <label>Address</label>
                                 </div>
@@ -101,8 +122,11 @@
 
                         </div>
                         <div class="row">
+                            <span class="text-error">{{ form.address.errors }}</span>
+                        </div>
+                        <div class="row">
                             <div class="col-md-1 pr-1"></div>
-                            <div class="col-md-1 pr-1">
+                            <div class="col-md-2 pr-1">
                                 <div class="form-group">
                                     <label>Town</label>
                                 </div>
@@ -112,11 +136,10 @@
                                     {{ form.town }}
                                 </div>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="col-md-1 pr-1"></div>
-                            <div class="col-md-1 pr-1">
+                            <div class="col-md-2 pr-1">
                                 <div class="form-group">
                                     <label>County</label>
                                 </div>
@@ -129,9 +152,9 @@
                         </div>
                         <div class="row">
                             <div class="col-md-1 pr-1"></div>
-                            <div class="col-md-1 pr-1">
+                            <div class="col-md-2 pr-1">
                                 <div class="form-group">
-                                    <label>Postal Code</label>
+                                    <label>Post Code</label>
                                 </div>
                             </div>
                             <div class="col-md-6 pr-1">
@@ -143,7 +166,7 @@
                         <h4 class="title">Next of Kin</h4>
                         <div class="row">
                             <div class="col-md-1 pr-1"></div>
-                            <div class="col-md-1 pr-1">
+                            <div class="col-md-2 pr-1">
                                 <div class="form-group">
                                     <label>First Name</label>
                                 </div>
@@ -156,7 +179,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-1 pr-1"></div>
-                            <div class="col-md-1 pr-1">
+                            <div class="col-md-2 pr-1">
                                 <div class="form-group">
                                     <label>Last Name</label>
                                 </div>
@@ -169,7 +192,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-1 pr-1"></div>
-                            <div class="col-md-1 pr-1">
+                            <div class="col-md-2 pr-1">
                                 <div class="form-group">
                                     <label>Phone</label>
                                 </div>
@@ -180,23 +203,23 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
-                            <div class="col-md-4 pr-1"></div>
-
-                            <div class="col-md-2 pr-1">
-                                <button type="submit" class="btn btn-fill btn-sucess">Register</button>
-
-                                <button type="submit" class="btn btn-fill btn-primary">Cancel</button>
+                            <div class="col-md-1 pr-1"></div>
+                            <div class="col-md-8 pr-1" align="center">
+                                <button type="submit" class="btn btn-fill btn-success" >Register</button>
+                                <button type="submit" class="btn btn-fill btn-primary" >Cancel</button>
                             </div>
-
                         </div>
 
                     </form>
                 </div>
             </div>
+
+            </form>
         </div>
     </div>
+</div>
+</div>
 </div>
 
 {% endblock content %}

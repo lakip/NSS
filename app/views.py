@@ -25,3 +25,4 @@ def pages(request):
         template = loader.get_template('pages/error-404.html')
         return HttpResponse(template.render(context, request))
 
+

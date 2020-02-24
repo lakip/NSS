@@ -1,20 +1,29 @@
 from django.shortcuts import render
-from .forms import StudentRegistration
+from .forms import StudentForm
+from django.contrib import messages
+from .models import StudentRegister
+
+mss = ''
 
 
-def register_student(request):
-    msg = None
-    success = False
+def studentform_view(request):
     if request.method == "POST":
-        form = StudentRegistration(request.POST)
+
+        form = StudentForm(request.POST)
         if form.is_valid():
             form.save()
-            msg = 'Student created.'
-            success = True
-
+            messages.success(request, 'registration successful')
+            return render(request, 'students/class_list.html')
         else:
-            msg = 'Form is not valid'
-    else:
-        form = StudentRegistration()
+            return render(request, 'students/register.html')
 
-    return render(request, "students/register.html", {"form": form, "msg": msg, "success": success})
+    form = StudentForm
+    return render(request, "students/register.html", {"form": form})
+
+
+def class_list(request):
+    context = {
+        'student_list': StudentRegister.objects.all()
+    }
+    return render(request, 'students/class_list.html', context)
+

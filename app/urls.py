@@ -7,5 +7,5 @@ urlpatterns = [
     re_path(r'^.*\.html', views.pages, name='pages'),
     path('', views.index, name='home'),
     path('', include('student.urls')),
-
+    path('', include('teacher.urls')),
 ]
