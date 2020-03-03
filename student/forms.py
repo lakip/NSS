@@ -31,7 +31,7 @@ class StudentForm(forms.ModelForm):
         widget=forms.TextInput(
             attrs={
                 'class': 'form-control col-md-12  pr-2 form-group ',
-                'placeholder': 'Enter Admission Number'
+                'placeholder': 'Enter Admission Number',
             }
         )
     )

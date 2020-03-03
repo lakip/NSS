@@ -14,31 +14,14 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="title">Add New Student</h5>
+                    <h5 class="title">Update Student</h5>
 
                 </div>
                 <div class="card-body">
                 </div>
                 <div class="card-body">
                     <form role="form" method="post" action="">
-
                         {% csrf_token %}
-                        {% if messages %}
-                        <ul class="messages">
-                            {% for message in message %}
-                                <li {% if message.tags%} class="{{ message.tags }}" {% endif %}> {{ message }}></li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-
-
-                        <div class="row">
-                          <div class="col-md-6 pr-1">
-                                <div class="form-group">
-                                    {{ form.date }}
-                                </div>
-                            </div>
-                        </div>
                         <div class="row">
 
                             <div class="col-md-1 pr-1"></div>
@@ -49,9 +32,9 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6 pr-1">
+                            <div class="col-md-6 pr-1" >
                                 <div class="form-group">
-                                    {{ form.admno }}
+                                   {{ form.admno}}
                                 </div>
                             </div>
 
@@ -115,16 +98,19 @@
                         <div class="row">
 
                             <div class="col-md-1 pr-1"></div>
+
                             <div class="col-md-2 pr-1">
                                 <div class="form-group">
                                     <label>Address</label>
                                 </div>
                             </div>
+
                             <div class="col-md-6 pr-1">
                                 <div class="form-group">
                                     {{ form.address }}
                                 </div>
                             </div>
+
                         </div>
                         <div class="row">
                             <span class="text-error">{{ form.address.errors }}</span>
@@ -211,7 +197,7 @@
                         <div class="row">
                             <div class="col-md-1 pr-1"></div>
                             <div class="col-md-8 pr-1" align="center">
-                                <button type="submit" class="btn btn-fill btn-success" >Register</button>
+                                <button type="submit" class="btn btn-fill btn-success" >Update</button>
                                 <button type="submit" class="btn btn-fill btn-primary" >Cancel</button>
                             </div>
                         </div>

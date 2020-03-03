@@ -1,4 +1,9 @@
+from datetime import datetime
+
+import django
 from django.db import models
+from django.urls import reverse
+
 
 clss = [
     ('Form1', 'Form One'),
@@ -26,7 +31,7 @@ class StudentRegister(models.Model):
         return self.formclass
 
     def get_absolute_url(self):
-        return 'register_student/'
+        return reverse('register_student/', kwargs={'pk': self.pk})
 
     class Meta:
         db_table = 'StudentRegister'
